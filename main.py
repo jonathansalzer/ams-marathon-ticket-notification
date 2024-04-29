@@ -20,14 +20,22 @@ def notify():
     subprocess.Popen(['notify-send', "MARATHON TICKETS AVAILABLE"])
     return
 
-while True:
-    print("Checking availability...")
-    if check_availability() != 0:
-        print("Tickets available!")
-        notify()
-        webbrowser.open("https://www.tcsamsterdammarathon.nl/startbewijs-vraag-aanbod")
-    else:
-        print("No tickets available.")
+def open_browser():
+    webbrowser.open("https://www.tcsamsterdammarathon.nl/startbewijs-vraag-aanbod")
+    return
 
-    # check every 2 minutes
-    time.sleep(120)
+def main():
+    while True:
+        print("Checking availability...")
+        if check_availability() != 0:
+            print("Tickets available!")
+            notify()
+            open_browser()
+        else:
+            print("No tickets available.")
+
+        # check every 2 minutes
+        time.sleep(120)
+
+if __name__ == "__main__":
+    main()
