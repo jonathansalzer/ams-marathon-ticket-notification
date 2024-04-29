@@ -34,8 +34,8 @@ def main():
         else:
             print("No tickets available.")
 
-        # check every 2 minutes
-        time.sleep(120)
+        # check every minute
+        time.sleep(60)
 
 if __name__ == "__main__":
     main()
