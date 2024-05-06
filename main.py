@@ -25,17 +25,21 @@ def open_browser():
     return
 
 def main():
+    available = 0
+
     while True:
         print("Checking availability...")
-        if check_availability() != 0:
+        new_avail = check_availability()
+        if new_avail != available:
             print("Tickets available!")
             notify()
             open_browser()
+            available = new_avail 
         else:
             print("No tickets available.")
 
         # check every minute
-        time.sleep(60)
+        time.sleep(20)
 
 if __name__ == "__main__":
     main()
