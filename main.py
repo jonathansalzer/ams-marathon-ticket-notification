@@ -21,7 +21,7 @@ def notify():
     return
 
 def open_browser():
-    webbrowser.open("https://www.tcsamsterdammarathon.nl/startbewijs-vraag-aanbod")
+    webbrowser.open("https://atleta.cc/e/nhIVueqEDrvO/resale")
     return
 
 def main():
