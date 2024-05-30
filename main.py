@@ -30,11 +30,14 @@ def main():
     while True:
         print("Checking availability...")
         new_avail = check_availability()
-        if new_avail != available:
+        if new_avail > available:
             print("Tickets available!")
             notify()
             open_browser()
             available = new_avail 
+        elif new avail < available:
+            print("Tickets gone.")
+            available = new_avail
         else:
             print("No tickets available.")
 
